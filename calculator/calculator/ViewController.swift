@@ -14,6 +14,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    //button actions
+    
+    @IBAction func numberClicked (_ sender: UIButton) {
+    }
+    @IBAction func operatorClicked (_ sender: UIButton) {
+    }
+    @IBAction func equalsClicked (_ sender: UIButton) {
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
