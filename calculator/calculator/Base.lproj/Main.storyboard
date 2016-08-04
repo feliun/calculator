@@ -56,7 +56,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="Wb0-RN-QSS"/>
                                     <constraint firstAttribute="height" constant="70" id="dWs-jC-at2"/>
                                 </constraints>
-                                <state key="normal" title="Button" backgroundImage="four"/>
+                                <state key="normal" title="Button" backgroundImage="add"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZf-6D-HKB">
                                 <frame key="frameInset" minX="25" minY="289" width="74" height="70"/>
@@ -96,7 +96,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="PRb-AA-1fu"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="gNR-1B-8nW"/>
                                 </constraints>
-                                <state key="normal" title="Button" backgroundImage="eight"/>
+                                <state key="normal" title="Button" backgroundImage="minus"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUT-Sn-PXV">
                                 <frame key="frameInset" minX="25" minY="376" width="74" height="70"/>
@@ -136,7 +136,7 @@
                                     <constraint firstAttribute="height" constant="70" id="kkq-36-9S4"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="lr2-XK-G3E"/>
                                 </constraints>
-                                <state key="normal" title="Button" backgroundImage="one"/>
+                                <state key="normal" title="Button" backgroundImage="times"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANW-ni-c8V">
                                 <frame key="frameInset" minX="25" minY="459" width="74" height="70"/>
@@ -166,27 +166,41 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="o8E-T8-GYl"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="rTU-1c-4gl"/>
                                 </constraints>
-                                <state key="normal" title="Button" backgroundImage="one"/>
+                                <state key="normal" title="Button" backgroundImage="divide"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P44-sF-6ih">
+                                <frame key="frameInset" minX="33" minY="145" width="309" height="36"/>
+                                <color key="backgroundColor" red="0.92496318717277481" green="0.91760252650109919" blue="0.16249918338313502" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Gt2-lT-Aih"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="27"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="136.80000000000001" y="151.57421289355324"/>
         </scene>
     </scenes>
     <resources>
+        <image name="add" width="269" height="269"/>
+        <image name="divide" width="269" height="269"/>
         <image name="eight" width="328" height="340"/>
         <image name="equals" width="800" height="240"/>
         <image name="five" width="328" height="340"/>
         <image name="four" width="328" height="340"/>
+        <image name="minus" width="269" height="269"/>
         <image name="nine" width="328" height="340"/>
         <image name="one" width="328" height="340"/>
         <image name="seven" width="328" height="340"/>
         <image name="six" width="328" height="340"/>
         <image name="three" width="328" height="340"/>
+        <image name="times" width="269" height="269"/>
         <image name="two" width="328" height="340"/>
         <image name="zero" width="328" height="340"/>
     </resources>
