@@ -216,8 +216,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P44-sF-6ih">
-                                <frame key="frameInset" minX="51" minY="129" width="275" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P44-sF-6ih">
                                 <color key="backgroundColor" red="0.92496318717277481" green="0.91760252650109919" blue="0.16249918338313502" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Gt2-lT-Aih"/>
@@ -232,7 +231,9 @@
                         <constraints>
                             <constraint firstItem="g3z-1T-tLn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DL7-nR-u76"/>
                             <constraint firstItem="g3z-1T-tLn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GCc-fH-4hJ"/>
+                            <constraint firstItem="P44-sF-6ih" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="HHr-Op-sKA"/>
                             <constraint firstItem="P44-sF-6ih" firstAttribute="centerX" secondItem="g3z-1T-tLn" secondAttribute="centerX" id="RHf-k3-bSP"/>
+                            <constraint firstItem="P44-sF-6ih" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="mAl-20-B2B"/>
                         </constraints>
                     </view>
                     <connections>
