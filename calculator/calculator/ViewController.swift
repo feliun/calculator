@@ -35,36 +35,41 @@ class ViewController: UIViewController {
     }
     @IBAction func operatorClicked (_ sender: UIButton) {
         switch(sender.tag) {
-        case 10: self.currentOperation = Operator.add
-                    break
-        case 11: self.currentOperation = Operator.subtract
-            break
-        case 12: self.currentOperation = Operator.times
-            break
-        case 13: self.currentOperation = Operator.divide
-            break
-        default: self.currentOperation = Operator.nothing
+            case 10: self.currentOperation = Operator.add
+                break
+            case 11: self.currentOperation = Operator.subtract
+                break
+            case 12: self.currentOperation = Operator.times
+                break
+            case 13: self.currentOperation = Operator.divide
+                break
+            default: self.currentOperation = Operator.nothing
         }
         self.calcState = CalculationState.newNumStarted
     }
-    @IBAction func equalsClicked (_ sender: UIButton) {
-        var result = 0
-        switch(self.currentOperation) {
-        case Operator.add: result = self.firstOperator + self.secondOperator
-            break
-        case Operator.subtract: result = self.firstOperator - self.secondOperator
-            break
-        case Operator.times: result = self.firstOperator * self.secondOperator
-            break
-        case Operator.divide: result = self.firstOperator / self.secondOperator
-            break
-        default: break
-        }
-        resultLabel.text = String(result)
+    
+    func reset () {
         self.firstOperator = 0
         self.secondOperator = 0
         self.calcState = CalculationState.enteringNum
         self.currentOperation = Operator.nothing
+    }
+    
+    @IBAction func equalsClicked (_ sender: UIButton) {
+        var result = 0
+        switch(self.currentOperation) {
+            case Operator.add: result = self.firstOperator + self.secondOperator
+                break
+            case Operator.subtract: result = self.firstOperator - self.secondOperator
+                break
+            case Operator.times: result = self.firstOperator * self.secondOperator
+                break
+            case Operator.divide: result = self.firstOperator / self.secondOperator
+                break
+            default: break
+        }
+        resultLabel.text = String(result)
+        reset()
     }
 
     override func didReceiveMemoryWarning() {
