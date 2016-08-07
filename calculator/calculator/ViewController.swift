@@ -24,22 +24,31 @@ class ViewController: UIViewController {
     
     //button actions
     
+    func updateView(number: Int) {
+        resultLabel.text = String(number)
+    }
+    
+    func displayOperator(op: Operator) {
+        var operatorByName: [Operator: String] = [ Operator.add: "+", Operator.subtract: "-", Operator.times: "*", Operator.divide: "/", Operator.nothing: "" ]
+        resultLabel.text = resultLabel.text! + " " + operatorByName[op]!
+    }
+    
     @IBAction func numberClicked (_ sender: UIButton) {
+        let pressedDigit = sender.tag
         if (calcState == CalculationState.enteringNum) {
-            self.firstValue = self.firstValue * 10 + sender.tag
-            resultLabel.text = String(self.firstValue)
+            self.firstValue = self.firstValue * 10 + pressedDigit
+            updateView(number: self.firstValue)
         } else if (calcState == CalculationState.newNumStarted) {
-            self.secondValue = self.secondValue * 10 + sender.tag
-            resultLabel.text = String(self.secondValue)
+            self.secondValue = self.secondValue * 10 + pressedDigit
+            updateView(number: self.secondValue)
         }
     }
     @IBAction func operatorClicked (_ sender: UIButton) {
         var operatorByTagCode: [Int: Operator] = [ 10: Operator.add, 11: Operator.subtract, 12: Operator.times, 13: Operator.divide ]
         self.currentOperation = Operator.nothing
-        if let operation = operatorByTagCode[sender.tag] {
-            self.currentOperation = operation
-        }
+        if let operation = operatorByTagCode[sender.tag] { self.currentOperation = operation }
         self.calcState = CalculationState.newNumStarted
+        displayOperator(op: self.currentOperation)
     }
     
     @IBAction func equalsClicked (_ sender: UIButton) {
@@ -55,7 +64,7 @@ class ViewController: UIViewController {
                 break
             default: break
         }
-        resultLabel.text = String(result)
+        updateView(number: result)
         self.firstValue = result
         self.secondValue = 0
     }
