@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     
     var currentOperation:Operator = Operator.nothing
     var calcState:CalculationState = CalculationState.enteringNum
-    var firstOperator = 0
-    var secondOperator = 0
+    var firstValue = 0
+    var secondValue = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,50 +26,38 @@ class ViewController: UIViewController {
     
     @IBAction func numberClicked (_ sender: UIButton) {
         if (calcState == CalculationState.enteringNum) {
-            self.firstOperator = self.firstOperator * 10 + sender.tag
-            resultLabel.text = String(self.firstOperator)
+            self.firstValue = self.firstValue * 10 + sender.tag
+            resultLabel.text = String(self.firstValue)
         } else if (calcState == CalculationState.newNumStarted) {
-            self.secondOperator = self.secondOperator * 10 + sender.tag
-            resultLabel.text = String(self.secondOperator)
+            self.secondValue = self.secondValue * 10 + sender.tag
+            resultLabel.text = String(self.secondValue)
         }
     }
     @IBAction func operatorClicked (_ sender: UIButton) {
-        switch(sender.tag) {
-            case 10: self.currentOperation = Operator.add
-                break
-            case 11: self.currentOperation = Operator.subtract
-                break
-            case 12: self.currentOperation = Operator.times
-                break
-            case 13: self.currentOperation = Operator.divide
-                break
-            default: self.currentOperation = Operator.nothing
+        var operatorByTagCode: [Int: Operator] = [ 10: Operator.add, 11: Operator.subtract, 12: Operator.times, 13: Operator.divide ]
+        self.currentOperation = Operator.nothing
+        if let operation = operatorByTagCode[sender.tag] {
+            self.currentOperation = operation
         }
         self.calcState = CalculationState.newNumStarted
-    }
-    
-    func reset () {
-        self.firstOperator = 0
-        self.secondOperator = 0
-        self.calcState = CalculationState.enteringNum
-        self.currentOperation = Operator.nothing
     }
     
     @IBAction func equalsClicked (_ sender: UIButton) {
         var result = 0
         switch(self.currentOperation) {
-            case Operator.add: result = self.firstOperator + self.secondOperator
+            case Operator.add: result = self.firstValue + self.secondValue
                 break
-            case Operator.subtract: result = self.firstOperator - self.secondOperator
+            case Operator.subtract: result = self.firstValue - self.secondValue
                 break
-            case Operator.times: result = self.firstOperator * self.secondOperator
+            case Operator.times: result = self.firstValue * self.secondValue
                 break
-            case Operator.divide: result = self.firstOperator / self.secondOperator
+            case Operator.divide: result = self.firstValue / self.secondValue
                 break
             default: break
         }
         resultLabel.text = String(result)
-        reset()
+        self.firstValue = result
+        self.secondValue = 0
     }
 
     override func didReceiveMemoryWarning() {
